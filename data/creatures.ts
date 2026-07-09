@@ -8,8 +8,8 @@ export const CREATURES: Creature [] = [
         maxHp: 100,
         moves: [
             { name: 'Griffe ardente', power: 18},
-            { name: 'Souffre cendré', power: 24}
-            {}
+            { name: 'Souffre cendré', power: 24},
+            {},
             {}
         ]
     }
