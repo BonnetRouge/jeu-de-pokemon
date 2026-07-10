@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Creature } from "../types/game";
 import { CREATURES } from "../data/creatures";
-import HpBar from "./Hpbar";
+import HpBar from "./HpBar";
 
 const CYCLE: Creature["type"][] = ["feu", "nature", "eau", "foudre"];
 
