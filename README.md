@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokemon Battle
 
-## Getting Started
+Un jeu de combat Pokémon développé avec React et Next.js dans le cadre d'un projet scolaire. Le joueur choisit sa créature parmi 4 disponibles, puis affronte un adversaire choisi aléatoirement dans un combat au tour par tour basé sur un système de types (feu, nature, eau, foudre).
 
-First, run the development server:
+## Prérequis
+
+- [Node.js](https://nodejs.org/) (version 18 ou supérieure recommandée)
+- npm (installé automatiquement avec Node.js)
+
+## Installation
+
+Clonez le projet, puis placez-vous dans le dossier :
+
+```bash
+git clone https://github.com/BonnetRouge/jeu-de-pokemon.git
+cd jeu-de-pokemon
+```
+
+Installez les dépendances :
+
+```bash
+npm install
+```
+
+## Lancer le projet
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le jeu est ensuite accessible dans le navigateur à l'adresse : http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Comment jouer
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Sur l'écran d'accueil, cliquez sur **Start**
+2. Choisissez votre Pokemon parmi les 4 proposées en cliquant sur sa carte
+3. Un adversaire apparaît automatiquement de façon aléatoire pour le combat
+4. Cliquez sur une des attaques disponibles pour attaquer l'adversaire
+5. Le combat se déroule au tour par tour jusqu'à ce qu'un des deux combattants soit mis K.O
+6. À la fin du combat, cliquez sur **Rejouer** pour retourner au menu et recommencer
