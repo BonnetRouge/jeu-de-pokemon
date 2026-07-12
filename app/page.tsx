@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Creature } from "../types/game";
-import { CREATURES } from "../data/creatures";
+import { fetchCreatures } from "../data/creatures";
 import CreatureCard from "../components/CreatureCard";
 import Battle from "../components/Battle";
 
@@ -10,7 +10,12 @@ type Screen = "menu" | "selection" | "battle";
 
 export default function Home() {
   const [screen, setScreen] = useState<Screen>("menu");
+  const [creatures, setCreatures] = useState<Creature[]>([]);
   const [player, setPlayer] = useState<Creature | null>(null);
+
+  useEffect(() => {
+    fetchCreatures().then((result) => setCreatures(result));
+  }, []);
 
   function handleStart() {
     setScreen("selection");
@@ -54,7 +59,7 @@ export default function Home() {
             Choisis ton Pokemon
           </h1>
           <div className="grid grid-cols-2 gap-4">
-            {CREATURES.map((creature) => (
+            {creatures.map((creature) => (
               <CreatureCard
                 key={creature.id}
                 creature={creature}
@@ -66,7 +71,7 @@ export default function Home() {
       )}
 
       {screen === "battle" && player && (
-        <Battle player={player} onRestart={handleRestart} />
+        <Battle player={player} creatures={creatures} onRestart={handleRestart} />
       )}
     </main>
   );

@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { Creature } from "../types/game";
-import { CREATURES } from "../data/creatures";
 import HpBar from "./HpBar";
 
-const CYCLE: Creature["type"][] = ["feu", "nature", "eau", "foudre"];
+const CYCLE: Creature["type"][] = ["fire", "grass", "water", "electric"];
 
 function getMultiplier(attacker: Creature["type"], defender: Creature["type"]) {
   const attackerIndex = CYCLE.indexOf(attacker);
@@ -16,12 +15,13 @@ function getMultiplier(attacker: Creature["type"], defender: Creature["type"]) {
 
 interface BattleProps {
   player: Creature;
+  creatures: Creature[];
   onRestart: () => void;
 }
 
-export default function Battle({ player, onRestart }: BattleProps) {
+export default function Battle({ player, creatures, onRestart }: BattleProps) {
   const [enemy] = useState<Creature>(() => {
-    const remainingCreatures = CREATURES.filter(
+    const remainingCreatures = creatures.filter(
       (creature) => creature.id !== player.id,
     );
     return remainingCreatures[
