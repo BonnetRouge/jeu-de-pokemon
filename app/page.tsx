@@ -51,7 +51,7 @@ export default function Home() {
       {screen === "selection" && (
         <>
           <h1 className="text-2xl font-bold text-yellow-300 drop-shadow">
-            Choisis ta créature
+            Choisis ton Pokemon
           </h1>
           <div className="grid grid-cols-2 gap-4">
             {CREATURES.map((creature) => (
